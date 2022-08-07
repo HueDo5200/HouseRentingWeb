@@ -29,16 +29,17 @@
  ![house_renting_1](https://user-images.githubusercontent.com/58656986/183302090-ae6ac5c9-f4f3-4bce-a5f8-9460eec8e69a.png)
  
  Homepage with search with one or many criterias
- ![house_renting_2](https://user-images.githubusercontent.com/58656986/183302130-033a1bc7-d996-4d62-![house_renting_3](https://user-images.githubusercontent.com/58656986/183302133-3134779b-ca24-4056-8cd8-80a7fda9449d.png)
-bbe0-53b444b9434d.png)
+ ![house_renting_2](https://user-images.githubusercontent.com/58656986/183302233-ca96d3fe-53c1-4bd3-b940-2c8a9db0326c.png)
 
-Logged In Homepage
+![house_renting_3](https://user-images.githubusercontent.com/58656986/183302238-26d6ba0a-3395-4f77-a7ba-f868ffd128e2.png)
+
+ Logged In Homepage
 ![Web capture_7-8-2022_23525_localhost](https://user-images.githubusercontent.com/58656986/183302158-da9ff86c-fd71-469a-ab45-7327f2b09a3c.jpeg)
 
-Owner page
+ Owner page
 ![Web capture_7-8-2022_231734_localhost](https://user-images.githubusercontent.com/58656986/183302168-13897625-358a-444f-b36a-5d88e16adc4d.jpeg)
 
-Chat page
+ Chat page
 ![Web capture_7-8-2022_232017_localhost](https://user-images.githubusercontent.com/58656986/183302175-3bc40d2f-91f9-4226-9ec0-e257ea5764c6.jpeg)
 ![Screenshot 2022-08-07 232032](https://user-images.githubusercontent.com/58656986/183302182-c1468196-889b-405d-8caf-274323f9de0c.png)
 
