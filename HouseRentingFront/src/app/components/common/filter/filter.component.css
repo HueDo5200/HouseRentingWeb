@@ -1,0 +1,102 @@
+.app-filter {
+   display: flex;
+   flex-direction: row;
+   justify-content: flex-start;
+   align-items: center;
+}
+.form-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.amenity-list-section {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    margin-top: 25px;
+}
+
+.filter-section {
+margin-top: 20px;
+display: grid;
+grid-template-columns: auto auto auto auto;
+}
+
+.select-section {
+    margin-top :20px;
+}
+.filter-item {
+    padding: 10px;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+    border-radius: 25px;
+    text-align: center;
+    margin: 5px;
+    width: auto;
+    font-weight: bold;
+}
+
+.filter-item-selected {
+ padding: 10px;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+    border-radius: 25px;
+    text-align: center;
+    margin: 5px;
+    width: auto;
+    font-weight: bold;
+    background-color: green;
+    color: white;
+
+}
+
+.filter-item:hover {
+    cursor: pointer;
+}
+
+.select-option {
+    text-align: center;
+    font-weight: bold;
+}
+.date-filter {
+    margin-left: 10px;
+}
+.form-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.input {
+    padding: 6px;
+    margin: 2px;
+}
+.search-btn {
+    border: none;
+    transform: scale(1.2);
+    background-color: white;
+    color: green;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.place-form {
+    margin-right: 20px;
+   
+}
+.place-input {
+padding: 10px;
+border-radius: 20px;
+margin-top:20px;
+outline: none;
+box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
+border:none;
+}
+.place-btn {
+    border: none;
+    transform: scale(1.2);
+    background-color: white;
+    cursor: pointer;
+    margin-left: 5px;
+    color: green;
+}

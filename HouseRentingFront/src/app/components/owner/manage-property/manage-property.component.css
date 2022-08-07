@@ -1,0 +1,128 @@
+.app-manage-property {
+    margin-top: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.add-btn {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-top: 10px;
+    border: 2px solid green;
+    margin-bottom: 10px;
+    cursor: pointer;
+    color: rgb(6, 142, 97);
+    font-weight: bold;
+}
+
+
+table {
+    border-collapse: collapse;
+}
+
+table th {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-right: 20px;
+    padding-left: 20px;
+    background-color: rgb(19, 113, 82);
+    color: white;
+}
+
+.item-img {
+    object-fit: contain;
+    width: 100px;
+    height: 100px;
+}
+
+.update-cover,
+.delete-cover {
+    padding: 5px;
+    border-radius: 50%;
+    text-align: center;
+}
+
+.update-cover {
+    background-color: rgb(6, 142, 97);
+}
+
+.delete-cover {
+    background-color: rgb(177, 45, 45);
+}
+
+table td {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-right: 20px;
+    padding-left: 20px;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px;
+    cursor: pointer;
+}
+
+
+.image-popup {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 2;
+    overflow: hidden;
+    transition: .64s ease-in-out;
+}
+
+.image-popup-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1000px;
+    max-height: 1000px;
+    width: 30vw;
+    height: 30vh;
+    background-color: #fff;
+    transition: .64s ease-in-out;
+    opacity: 1;
+    box-shadow: rgba(0, 0, 0, 0.09) 0px 3px 12px;
+}
+
+.search-input {
+    padding: 5px;
+    min-width: 400px;
+    margin-top: 10px;
+    margin-left: 10px;
+    outline: none;
+} 
+
+
+
+.description-popover {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    transform: translate(0, 10px);
+    height: auto;
+    width: auto;
+    text-align: center;
+    word-break: break-all; 
+    padding: 20px;
+}
+
+
+/* 
+
+.popover:hover .description-popover {
+    z-index: 99;
+    opacity: 2;
+    visibility: visible;
+    transform: translate(50px, -100px);
+    transition: all 0.5s cubic-bezier(0.75, -0.02, 0.2, 0.97);
+
+}  */

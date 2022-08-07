@@ -1,0 +1,57 @@
+<div class="app-property-list">
+    <div class = 'rating-filter'>
+    <form name = "sForm" #searchForm ="ngForm" (ngSubmit)="onSearchSubmit()">
+        <div class = 'rating-text'>
+        Find top rating properties
+    </div>
+        <input type="number" placeholder = "Find top rated property" class="place-input" name = "number" [(ngModel)] = "sForm.number" #number="ngModel"/>
+        <button class = 'search-btn' type = 'submit'><i class="fa-solid fa-magnifying-glass"></i></button>
+      </form>
+    </div>
+    <div class = 'property-list-section'>
+        <div class = 'customer-property-section'>
+            <div *ngIf = "customerList && customerList.length > 0" class = 'reservation-title'>Your Reserved Properties</div>
+        <div class = 'customer-list-section' *ngIf="customerList && customerList.length > 0">
+          
+            <div class = 'property-list' *ngFor="let property of customerList" >
+                <app-property-item [property]="property"></app-property-item>
+            </div>
+        </div>
+        </div>
+        <div class = 'reservation-title'>Available Properties</div>
+        <div class = 'property-list'>
+            
+    <div *ngFor="
+    let property of propertyList | paginate : {
+        itemsPerPage: pageSize,
+        currentPage: page,
+        totalItems: count
+    }; let i = index">
+        <app-property-item [property]="property"></app-property-item>
+    </div>
+</div>
+
+<div class = 'pagination-section'>
+    <div class = 'pagination-controls'>
+    <pagination-controls
+    previousLabel="Prev"
+    nextLabel="Next"
+    (pageChange)="handlePageChange($event)"
+  ></pagination-controls>
+</div>
+<div class = 'page-size-section'>
+    <div class = 'item-per-page'>Items per page</div>
+    <!-- <select (change) = "handlePageSizeChange($event)">
+        <option *ngFor="let size of pageSizes" [ngValue] = "size">
+            {{size}}
+        </option>
+    </select> -->
+
+    <form name = "pForm" #searchForm ="ngForm" (ngSubmit)="onSelectPageSize()">
+        <input type="number" class="place-input" name = "size" [(ngModel)] = "pForm.size" min = "1" #size="ngModel"/>
+        <button class = 'search-btn' type = 'submit'></button>
+      </form>
+</div>
+</div>
+</div>
+</div>

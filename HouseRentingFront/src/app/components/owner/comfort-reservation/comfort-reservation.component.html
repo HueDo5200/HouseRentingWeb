@@ -1,0 +1,59 @@
+<div class="app-comfort-reservation">
+    <div class="search-area">
+        <input type="text" class="search-input" name = "keyword" (change)="onSearchSubmit($event)" placeholder="Search by property name"/>
+      </div>
+    <div class = 'reservation-list' *ngIf="reservations && reservations.length > 0">
+        <div class = 'reservation-table'>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Property name</th>
+                        <th>Customer </th>
+                        <th>Checkin Date</th>
+                        <th>Checkout Date</th>
+                        <th>Total</th>
+                        <th>Reservation Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody *ngFor="let p of reservations">
+                    <tr>
+                        <td><div class = 'name-text'>{{p.propertyName}}</div></td>
+                        <td><div class = 'description-text' (click) = "showCustomerInfo(p.customerId)">
+                            <mat-icon *ngIf="p.customerId != index">remove_red_eye</mat-icon>
+                            <div class = 'customer-infor' *ngIf="p.customerId == index">
+                                    {{customer.username}}, {{customer.phoneNumber}}, {{customer.email}}
+
+                            </div>
+                        </div></td>
+                        <td>{{p.startDate | date}}</td>
+                        <td>{{p.endDate | date}}</td>
+                        <td>{{p.total}}</td>
+                        <td>
+                            <div class = 'status' *ngIf="p.status == 0">
+                                    Waiting
+                            </div>
+                            <div class = 'status' *ngIf="p.status == 1">
+                               Reserved
+                        </div>
+                        <div class = 'status' *ngIf="p.status == 2">
+                            Completed
+                    </div>
+                    <div class = 'status' *ngIf="p.status == 3">
+                       Cancel
+                </div>
+                        </td>
+                        <td>
+                          <div class = 'comform-btn' *ngIf ="p.status == 0" (click) = "comformTo(p.id, 1)">Comform To</div>  
+                           <!-- <div class = 'delete-cover' ><mat-icon class='delete-btn'>delete_forever</mat-icon></div>  -->
+                           <div class = 'comform-btn' *ngIf ="p.status == 1" (click) = "comformTo(p.id, 2)">Complete</div>  
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class = 'reservation-empty' *ngIf="!reservations || reservations.length == 0">
+            <div class = 'title'>No reservations</div>
+    </div>
+</div>

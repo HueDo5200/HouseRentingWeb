@@ -1,0 +1,13 @@
+<div class="app-property-gallery">
+    <h3 *ngIf="property">{{property.propertyName}}'s Gallery</h3>
+    <div class = 'image-section' *ngIf="property && property.propertyImages">
+    <div class = 'image-list' *ngFor="let image of property.propertyImages">
+            <img src = 'http://localhost:8081/api/v1/renting/public/properties/{{image.name}}' class = 'image-item' alt = ""/>
+            <div class = 'delete-cover' (click) = "deletePropertyImage(image.id)"><mat-icon class='delete-btn'>delete_forever</mat-icon></div> 
+    </div>
+   
+</div>
+<div class = 'image-section' *ngIf="!property || !property.propertyImages || property.propertyImages.length == 0">
+    <h3>No image uploaded yet!</h3>
+</div>
+</div>

@@ -1,0 +1,66 @@
+table {
+    border-collapse: collapse;
+}
+
+.app-reservation-sale {
+    margin-top: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+table th {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-right: 20px;
+    padding-left: 20px;
+    background-color: rgb(19, 113, 82);
+    color: white;
+}
+table td {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-right: 20px;
+    padding-left: 20px;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px;
+    cursor: pointer;
+}
+
+.comform-btn {
+    font-weight: bold;
+    color: green;
+    border: 2px solid green;
+    padding: 5px;
+}
+.search-area {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.search-input {
+    padding: 5px;
+    min-width: 400px;
+    margin-top: 10px;
+    margin-left: 10px;
+    outline: none;
+
+    
+}
+
+.total {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.total-text, .total-value {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.total-value {
+    margin-left: 5px;
+    color: green;
+}

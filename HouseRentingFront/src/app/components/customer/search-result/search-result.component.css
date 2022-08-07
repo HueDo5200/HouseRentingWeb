@@ -1,0 +1,38 @@
+.app-search-result {
+    display: flex;
+   flex-direction: column;
+   justify-content: flex-start;
+   align-items: flex-start;
+   margin-top: 150px;
+}
+
+.property-list-section {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    
+}
+
+.rating-filter {
+    margin-top: 20px;
+    margin-left: 20px;
+}
+.rating-text {
+    font-weight: bold;
+    margin-bottom: 4px;
+}
+
+.search-btn {
+    margin-left: 3px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-right: 20px;
+    border: none;
+    background-color: white;
+    transform: scale(1.2);
+    color: green;
+}
+.no-text {
+    font-weight: bold;
+    font-size: 20px;
+    margin-top: 50px;
+}

@@ -1,0 +1,19 @@
+<div class="app-search-result">
+    <div class = 'rating-filter'>
+        <form name = "sForm" #searchForm ="ngForm" (ngSubmit)="onSearchSubmit()">
+            <div class = 'rating-text'>
+            Find top rating properties
+        </div>
+            <input type="number" placeholder = "Find top rated property" class="place-input" name = "number" [(ngModel)] = "sForm.number" #number="ngModel"/>
+            <button class = 'search-btn' type = 'submit'><i class="fa-solid fa-magnifying-glass"></i></button>
+          </form>
+        </div>
+    <div class = 'property-list-section' *ngIf="propertyList && propertyList.length > 0">
+    <div class = 'property-list' *ngFor="let property of propertyList">
+        <app-property-item [property]="property"></app-property-item>
+    </div>
+</div>
+<div class = 'no-text' *ngIf="!propertyList || propertyList && propertyList.length == 0">
+    No properties found!
+</div>
+</div>

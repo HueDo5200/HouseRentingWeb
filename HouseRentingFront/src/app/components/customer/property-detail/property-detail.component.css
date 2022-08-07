@@ -1,0 +1,199 @@
+.app-property-detail {
+    display: flex;
+    flex-direction: column;;
+    justify-content: center;
+    align-items: center;
+    margin-top: 150px;
+}
+
+.property-section {
+    margin-left: 20px;
+}
+
+.property-name {
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.property-images {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    place-items: center;
+    margin-top: 10px;
+   
+}
+.property-img{
+    object-fit: cover;
+    width: 300px;
+    height: 250px;
+    opacity: 1.2;
+    filter: brightness(80%);
+    padding: 10px;
+}
+.below-img {
+    display: flex;
+    flex-direction: row;
+}
+
+.description {
+    overflow-wrap: break-word;
+    
+}
+.property-name {
+    margin-left: 20px;
+}
+
+.property-infor {
+    display: flex;
+    flex-direction: row;
+    margin-left: 20px;
+    margin-top: 5px;
+}
+
+
+.below-img-left {
+    max-width: 50%;
+    width: 40%;
+    min-width: 200px;
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+}
+.below-img-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 100px;
+    padding: 20px;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+    border-radius: 25px;
+  
+}
+
+.feature {
+    display: flex;
+    flex-direction: column;
+}
+
+.card-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.checkin-date, .checkout-date {
+    padding: 5px;
+    width: 150px;
+    margin-left: 2px;
+    border:none;
+    cursor: pointer;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.price {
+    font-weight: bold;
+    font-size: 20px;
+}
+.checkin-date {
+    
+}
+.checkout-date {
+    
+}
+
+.reserve-btn {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: rgb(29, 123, 29);
+    text-align: center;
+    font-weight: bold;
+    color: white;
+    width: 330px;
+    height: 45px;
+    cursor: pointer;
+    border-radius: 25px;
+}
+
+.reserved-status {
+    color: red;
+    font-weight: bold;
+}
+
+.error {
+    color: red;
+}
+.login-request, .invalid-date {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.fa-star {
+    color: red;
+}
+
+.review-num {
+    margin-left: 5px;
+    font-weight: bold;
+}
+
+.location {
+    margin-left: 10px;
+}
+
+.host-infor {
+    font-weight: bold;
+    font-size: 20px;
+}
+.description {
+    margin-bottom: 20px;
+}
+
+.room {
+     font-size: 20px;
+}
+
+.amenities {
+    margin-top: 20px;
+   
+}
+.what-text {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.amenity-name {
+    font-size: 18px;
+}
+
+.amenity-list {
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+}
+.amenity-item {
+    margin-left: 5px;
+    padding: 10px;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+    border-radius: 25px;
+}
+
+.status-text {
+    color: green;
+    font-weight: bold;
+}
+
+.date-item {
+    margin: 5px;
+    color: green;
+    font-weight: bold;
+}
+.date-detail {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}

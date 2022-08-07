@@ -1,0 +1,82 @@
+.app-property-list {
+   display: flex;
+   flex-direction: column;
+   justify-content: flex-start;
+   align-items: flex-start;
+   margin-top: 150px;
+}
+
+.property-list-section {
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+  
+}
+
+.reservation-title {
+    font-weight: bold;
+    font-size: 25px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+/* .customer-property-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+} */
+
+.customer-list-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.property-list {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+}
+.rating-filter {
+    margin-top: 20px;
+    margin-left: 20px;
+}
+.rating-text {
+    font-weight: bold;
+    margin-bottom: 4px;
+}
+
+.search-btn {
+    margin-left: 3px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-right: 20px;
+    border: none;
+    background-color: white;
+    transform: scale(1.2);
+    color: green;
+}
+
+.pagination-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.page-size-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+    margin-left: 10px;
+}
+
+.item-per-page {
+    font-weight: bold;
+    margin-right: 10px;
+}

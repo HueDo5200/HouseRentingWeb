@@ -1,0 +1,35 @@
+.app-register {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 150px;
+    margin-bottom: 150px;
+}
+.field-input {
+    padding: 7px;
+    margin-bottom: 10px;
+    outline: none;
+    width: 250px;
+}
+.select-input {
+    padding: 7px;
+    margin-bottom: 10px;
+    outline: none;
+    width: 270px;
+}
+.submit-btn {
+    padding: 7px;
+    width: 100px;
+    background-color: white;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+}
+.submit-btn:hover {
+    background-color: black;
+    color: white;
+}
+.error {
+    color: red;
+}

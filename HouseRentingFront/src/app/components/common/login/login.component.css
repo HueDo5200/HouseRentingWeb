@@ -1,0 +1,49 @@
+.app-login {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: calc(100%, 20px);
+    margin-top: 150px;
+}
+.username-section {
+    display: flex;
+    flex-direction: column
+}
+.password-section {
+    display: flex;
+    flex-direction: column
+}
+
+.error {
+    color: red;
+}
+
+.name-input, .pass-input {
+padding: 7px;
+margin-bottom: 10px;
+outline: none;
+width: 250px;
+}
+.btns {
+    display: flex;
+    flex-direction: column;
+}
+
+.register-link {
+    text-decoration: none;
+    margin-top: 10px;
+}
+.submit-btn {
+  padding: 7px;
+  width: 100px;
+  background-color: white;
+  color: black;
+  font-weight: bold;
+}
+
+.submit-btn:hover {
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}

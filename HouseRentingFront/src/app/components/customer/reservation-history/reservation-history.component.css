@@ -1,0 +1,60 @@
+.app-reservation-history {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+     margin-top: 250px;
+     margin-left: 50px;
+     width: 100vw;
+}
+
+.bill-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.date-ordered {
+    margin-left: 10px;
+    font-weight: bold;
+}
+.customer-bill {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    margin: 10px;
+    padding: 10px;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+    height: 200px;
+    
+}
+
+.total-text {
+    font-weight: bold;
+    margin-top: 20px;
+    text-align: center;
+}
+
+table td {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-right: 20px;
+    padding-left: 20px;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px;
+    cursor: pointer;
+}
+table th {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-right: 20px;
+    padding-left: 20px;
+    background-color: rgb(19, 113, 82);
+    color: white;
+}
+
+tr, th, td {
+    text-align: left;
+    
+}

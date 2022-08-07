@@ -1,0 +1,19 @@
+<div class="app-property-item" (click)="viewPropertyDetail(property.id)">
+  <img src="http://localhost:8084/api/v1/renting/public/properties/{{ property.propertyImages[0].name  }}" alt="" class = 'item-img' />
+  <div class="under-div">
+    <div class="property-info">
+      <div class="property-name">
+        {{ property.name }}
+      </div>
+
+    </div>
+    <div class="feature">
+      <div class="bedroom">{{ property.bedroom }} Bedroom</div>
+      <div class="bathroom">{{ property.bathroom }} Bathroom</div>
+      <div class="kitchen">{{ property.kitchen }} Kitchen</div>
+      <div class = 'property-price'>
+        {{property.pricePerNight}} $ night
+  </div>
+    </div>
+  </div>
+</div>

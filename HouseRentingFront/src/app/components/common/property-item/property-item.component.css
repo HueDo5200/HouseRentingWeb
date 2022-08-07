@@ -1,0 +1,54 @@
+.app-property-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 5px;
+    margin: 5px;
+    background-color: white;
+    max-width: 350px;
+}
+
+.app-property-item:hover {
+ /* background-color: aliceblue; */
+ transform: scale(1.05);
+ transition: 0.5s;
+}
+
+.property-name {
+    font-weight: bold;
+}
+
+.feature {
+    display: flex;
+    flex-direction: row;
+    flex-direction: flex-start;
+    align-items: flex-start;
+}
+.item-img {
+    object-fit: cover;
+    min-width: 250px;
+    max-width: 300px;
+    min-height: 200px;
+    height: 200px;
+    border-radius: 25%;
+    opacity: 1.5;
+}
+.item-img:hover {
+    color: aliceblue;
+    cursor: pointer;
+}
+.bedroom, .bathroom, .kitchen {
+    margin-left: 2px;
+    margin-right: 2px;
+    margin-top: 10px;
+    font-weight: bold;
+    opacity: 0.5;
+}
+
+.property-price {
+    font-weight: bold;
+    font-size: 16px;
+    margin-top: 5px;
+    margin-left: 5px;
+}

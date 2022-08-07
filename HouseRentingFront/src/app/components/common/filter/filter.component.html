@@ -1,0 +1,40 @@
+<div class="app-filter">
+  <form class = "form" #reserveForm ="ngForm"  (ngSubmit)="reserveForm.form.valid && onSubmit()">
+    <div class = 'form-section'>
+  <div class="place-form">
+    <input type="text" placeholder = "Where do you want to go ?" class="place-input" name = "place" [(ngModel)] = "form.place" #place="ngModel"/>
+  </div>
+    <div class = 'amenity-list-section'>
+      <!-- <select class = 'filter-item' [(ngModel)] = "form.amenity" name = "amenity" #amenity="ngModel">
+          <option class = 'select-option'>Amenity</option>
+          <option class = 'select-option' *ngFor="let amenity of amenities" [ngValue] = "amenity.name">{{amenity.name}}</option>
+      </select> -->
+      <div *ngFor="let amenity of amenities; let i = index">
+        <div  *ngIf = "amenitySelected[i]" class = 'filter-item-selected' (click)="selectAmenityById(amenity.id, i)">{{amenity.name}}</div>
+        <div  *ngIf = "!amenitySelected[i]" class = 'filter-item' (click)="selectAmenityById(amenity.id, i)">{{amenity.name}}</div>
+      </div>
+  </div>
+    <div class = 'select-section'>
+        <select class = 'filter-item' [(ngModel)] = "form.type" name = "type" #type="ngModel">
+          <option class = 'select-option'>Type</option>
+            <option class = 'select-option' *ngFor="let type of types" [ngValue] = "type.name" name="type">{{type.name}}</option>
+        </select>
+    </div>
+    <div class = 'date-filter'>
+            <div class = 'form-container'>
+          <input type = 'date' [(ngModel)] = "form.checkinDate" name = "checkinDate" #checkinDate = "ngModel" min="{{current | date:'yyyy-MM-dd'}}" class = 'input' placeholder="Check in"/>
+          <div class = 'error-section' *ngIf="checkinDate.errors && (checkinDate.dirty || checkinDate.touched)">
+            <div class = 'error' *ngIf="checkinDate.errors['min']">Please select date from today</div>
+        </div>
+          <input type = 'date'[(ngModel)] = "form.checkoutDate"  name = "checkoutDate" class = 'input' min="{{current | date:'yyyy-MM-dd'}}" #checkoutDate = "ngModel" placeholder = "Check out"/>
+          <div class = 'error-section' *ngIf="checkoutDate.errors && (checkoutDate.dirty || checkoutDate.touched)">
+            <div class = 'error' *ngIf="checkoutDate.errors['min']">Please select date from checkin date</div>
+        </div>
+    </div>  
+  </div>
+  <div class = 'card-footer'>
+    <button class = 'search-btn' type = 'submit'><i class="fa-solid fa-magnifying-glass"></i></button>
+</div>
+</div>
+</form>
+</div>

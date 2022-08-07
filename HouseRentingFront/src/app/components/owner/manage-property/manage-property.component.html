@@ -1,0 +1,58 @@
+<div class="app-manage-property">
+    <div class="search-area" *ngIf="propertyList">
+        <input type="text" class="search-input" name = "keyword" (change)="onSearchSubmit($event)" placeholder="Search by name"/>
+      </div>
+    <div class = 'add-btn' (click) = "openAddPopup()" *ngIf="propertyList">
+        Add new property
+    </div>
+    <table *ngIf="propertyList">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Image</th>
+                <th>Description</th>
+                <th>Average Rating</th>
+                <th>Number of rating</th>
+                <th>Price Per Night</th>
+                <th>Type</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody *ngFor="let p of propertyList">
+            <tr>
+                <td><div class = 'name-text'>{{p.name}}</div></td>
+                <td *ngIf="p.propertyImages && p.propertyImages.length > 0 && p.propertyImages[0].name"><img class = 'item-img' src = 'http://localhost:8084/api/v1/renting/public/properties/{{p.propertyImages[0].name}}' alt = '' /></td>
+                <td *ngIf="p.propertyImages && p.propertyImages.length <= 0">Unuploaded</td>
+                <td>
+                    <div class = 'description-text'>{{p.description}}</div>
+                </td>
+                <td>{{p.avgRating}}</td>
+                <td>{{p.ratingNum}}</td>
+                <td>{{p.pricePerNight}}</td>
+                <td>{{p.propertyType.name}}</td>
+                <td>
+                  <div class = 'update-cover' (click) = "openEditPopup(p)"><mat-icon class='create-btn'>create</mat-icon></div>  
+                   <div class = 'delete-cover' (click) = "deleteProperty(p.id)"><mat-icon class='delete-btn'>delete_forever</mat-icon></div> 
+                   <div class = 'upload-cover' (click) ="openImagePopup(p.id)"><mat-icon>perm_media</mat-icon></div>
+                   <div class = 'view-cover' (click) = "openImageGallery(p.id)"><mat-icon>collections</mat-icon></div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div class = 'property-popup' *ngIf="editPopup || addPopup">
+        <app-update-property [property] = "updatedProperty"></app-update-property>
+    </div>
+    <div class="image-popup" *ngIf="imagePopup">
+        <div class="image-popup-inner">
+            <div class="popup-title">
+                <h1>Upload image for property</h1>
+              </div>
+              <button (click)="closeImagePopup()" class="close-icon">
+                <mat-icon>clear</mat-icon>
+              </button>
+              <form #form="ngForm" (ngSubmit)="processImage()">
+                <input type="file" accept="image/*" multiple (change)="fileEvent($event)" />
+                <button class="submit-btn">Upload image</button>
+              </form>
+            </div>
+</div>

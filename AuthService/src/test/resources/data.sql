@@ -1,0 +1,4 @@
+INSERT INTO `role` VALUES (1,'owner'),(2,'customer');
+INSERT INTO `users` VALUES (1,'033303332','Quan','$2a$12$NBIaiXL1t0UvYRyBQ7zPyO9O.4m3GtAjc4eLAm3YZYKKADlz5aY.q','quan@gmail.com','Lana','March',2),(2,'0334455555','owner','$2a$12$NBIaiXL1t0UvYRyBQ7zPyO9O.4m3GtAjc4eLAm3YZYKKADlz5aY.q','owner@gmail.com','Lin','Yang',1),(3,'0334566555','Thanh','$2a$12$NBIaiXL1t0UvYRyBQ7zPyO9O.4m3GtAjc4eLAm3YZYKKADlz5aY.q','user2@gmail.com','Hoa','Lan',2),(4,'0332333333','Minh','$2a$12$NBIaiXL1t0UvYRyBQ7zPyO9O.4m3GtAjc4eLAm3YZYKKADlz5aY.q','minh@gmail.com','Minh','Ha',2),(5,'0333033094','Viet Anh','$2a$12$NBIaiXL1t0UvYRyBQ7zPyO9O.4m3GtAjc4eLAm3YZYKKADlz5aY.q','vietanh@gmail.com','Anh','Viet',1),(6,'033445556','Van','$2a$12$NBIaiXL1t0UvYRyBQ7zPyO9O.4m3GtAjc4eLAm3YZYKKADlz5aY.q','van@gmail.com','Van','Thanh',1);
+
+

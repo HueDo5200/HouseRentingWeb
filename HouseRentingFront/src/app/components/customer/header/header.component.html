@@ -1,0 +1,82 @@
+<div class="app-header">
+  <div class = 'app-customer-header'>
+    <div class = 'app-title'><a routerLink="property-list" class="router-link-header">House Renting Web App</a></div>
+    <span class="header-spacer"></span>
+    <div class="logout-btn-section" *ngIf="isLoggedIn$ | async">
+      <div class = 'loggedin-section'>
+        <div class="logged-search-area">
+            <form name = "form" #searchForm ="ngForm" (ngSubmit)="onSearchSubmit()">
+            <input type="text" placeholder = "Search by name, description, price..." class="search-input" name = "keyword" [(ngModel)] = "form.keyword" #keyword="ngModel"/>
+            <button class = 'search-btn' type = 'submit'><i class="fa-solid fa-magnifying-glass"></i></button>
+          </form>
+          </div>
+          <div class = 'history'>
+          <a routerLink="customer/chat" class="router-link"
+          >Chat with owner</a>
+          <a routerLink="/customer/reservation/history" class = 'router-link'>
+            Your History
+          </a>          </div>
+      <button (click)="logout()"  class="user-logout-btn">Logout</button>
+    </div>
+    <div class = 'filter'>
+      <app-filter></app-filter>
+    </div>
+    </div>
+    <div class="auth" *ngIf="isShow$ | async">
+      <div class = 'auth-above'>
+        <div class="search-area">
+            <form name = "form" #searchForm ="ngForm" (ngSubmit)="onSearchSubmit()">
+            <input type="text" placeholder = "Search by name, description, price..." class="search-input" name = "keyword" [(ngModel)] = "form.keyword" #keyword="ngModel"/>
+            <button class = 'search-btn' type = 'submit'><i class="fa-solid fa-magnifying-glass"></i></button>
+          </form>
+          </div>
+      <a routerLink="login"  class="router-link"
+        >Login</a
+      >
+      <a routerLink="register"  class="router-link"
+        >Register</a
+      >
+    </div>
+    <app-filter></app-filter>
+    </div>
+    <div class = 'auth-below-1' *ngIf="isLoggedIn$ | async">
+      
+    </div>
+    <div class = 'auth-below-2' *ngIf="isShow$ | async">
+     
+    </div>
+  </div>
+   
+  <div class="admin-section" *ngIf="isAdmin$ | async">
+   
+    <a routerLink="/owner/chat" class="owner-router-link">Chat with customer</a>
+    <a routerLink="/reservation/sale" class = 'owner-router-link'>View sale history</a>
+    <a routerLink="/manage-reservation" class="owner-router-link">Manage reservation</a>
+    <a routerLink="/manage-property" class="owner-router-link">Manage Property</a>
+    <button (click)="logout()" class="logout-btn">Logout</button>
+  </div>
+</div>
+
+<!-- 
+    <div class='app-header'>
+        <mat-toolbar color="primary">
+            <span><a routerLink="food-list" class = 'router-link'>Restaurant</a></span>
+            <span class="header-spacer"></span>
+            <div class = 'admin-section' *ngIf="isAdministrator ">
+                <a routerLink="/manage-user" class = 'router-link'>Manage User</a>
+                <a routerLink="/manage-menu"  class = 'router-link'>Manage Menu</a>
+                <a routerLink="/view-sales"   class = 'router-link'>View Sales</a>
+                <button (click) = "logout()" class = 'logout-btn'>Logout</button>
+            </div>
+            <div class = 'logout-btn-section'  *ngIf="isLoggedIn ">
+                <a routerLink="checkout" class = 'router-link'>Your Cart {{cartItems}}</a>
+            <button (click) = "logout()" class = 'logout-btn'>Logout</button>
+        </div>
+                <div class="auth" *ngIf="!isLoggedIn && !isAdministrator">
+                      <a routerLink="checkout" class = 'router-link'>Your Cart {{cartItems}}</a>
+                <a routerLink="login"class = 'router-link'>Login</a>
+                <a routerLink="register" class = 'router-link'>Register</a>
+            </div>
+            </mat-toolbar>
+        </div>
+ -->

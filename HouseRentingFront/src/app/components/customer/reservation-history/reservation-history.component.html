@@ -1,0 +1,32 @@
+<div class="app-reservation-history">
+    <div class="reservation-list" *ngIf="reservations && reservations.length > 0">
+      <div class="reservation-item">
+        <div class="customer-bill">
+          <table>
+            <tr>
+              <th>Property Name</th>
+              <th>Start Date</th>
+              <th>End Date</th>
+              <th>Total ($)</th>
+            </tr>
+            <tr *ngFor="let r of reservations; ">
+              <td>{{r.propertyName}}</td>
+              <td>{{ r.startDate | date}}</td>
+              <td>{{ r.endDate | date}}</td>
+              <td>{{ r.total }}</td>
+        
+            </tr>
+          </table>
+              <div class="total-text">
+                  Total Price:
+                  {{ total }} $
+                </div>
+          </div>
+        </div>
+      </div>
+      <div class = 'no-reservation' *ngIf="!reservations || reservations.length == 0">
+        <h3>You have no reservation yet!</h3>
+      </div>
+    </div>
+  
+  

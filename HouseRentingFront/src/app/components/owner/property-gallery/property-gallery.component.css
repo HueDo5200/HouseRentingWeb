@@ -1,0 +1,25 @@
+.app-property-gallery {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 150px;
+}
+
+.image-section {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+}
+
+.image-list {
+   cursor: pointer;
+}
+
+.image-item {
+    object-fit: cover;
+    width: 300px;
+    height: 250px;
+    padding: 5px;
+    margin: 5px;
+    cursor: pointer;
+}

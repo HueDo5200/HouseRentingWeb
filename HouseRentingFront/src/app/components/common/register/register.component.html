@@ -1,0 +1,85 @@
+<div class="app-register">
+    <h1>REGISTER</h1>
+    <form name = "form" #loginForm = "ngForm" (ngSubmit)="loginForm.form.valid && onClickSubmit()">
+        <div class = 'input-section'>
+            <div class = 'username-text'>Username</div>
+                <input  type = 'text' [(ngModel)]="form.username" name = 'username' class = 'field-input' ngModel required minlength = "2" maxlength = "30" #username="ngModel"/>
+        </div>
+        <div class = 'error-section' *ngIf="username.errors && (username.dirty || username.touched)">
+            <div class = 'error' *ngIf="username.errors['required']">Username is required</div>
+            <div class="error" *ngIf="username.errors['minlength']">Username must be at least one character</div>
+            <div class="error" *ngIf="username.errors['maxlength']">Username length should not be more than 30 characters</div>
+        </div>
+        <div class = 'input-section'>
+            <div class = 'pass-text'>Password</div> 
+                <input type = 'password' [(ngModel)]="form.password" name = 'password' class = 'field-input' ngModel required minlength = "8" maxlength = "50" #password="ngModel"/>
+        </div>
+        <div class = 'error-section' *ngIf="password.errors && (password.dirty || password.touched)">
+            <div class='error' *ngIf="password.errors['required']">Password is required</div>
+            <div class="error" *ngIf="password.errors['minlength']">Password must be at least 8 character</div>
+            <div class="error" *ngIf="password.errors['maxlength']">Password length should not be more than 50 characters</div>
+        </div>
+
+        <div class='field-section'>
+            <div class='input-text'>First name</div>
+            <input type='text' [(ngModel)]="form.firstName" name='firstName' class='field-input' required
+                minlength="2" #firstName="ngModel" />
+        </div>
+        <div class='error-section' *ngIf="firstName.errors && (firstName.dirty || firstName.touched)">
+            <div class='error' *ngIf="firstName.errors['required']">First Name is required</div>
+            <div class="error" *ngIf="firstName.errors['minlength']">Last Name must be at least 2 characters</div>
+        </div>
+
+        <div class='field-section'>
+            <div class='input-text'>Last name</div>
+            <input type='text' [(ngModel)]="form.lastName" name='lastName' class='field-input' required
+                minlength="2" #lastName="ngModel" />
+        </div>
+        <div class='error-section' *ngIf="lastName.errors && (lastName.dirty || lastName.touched)">
+            <div class='error' *ngIf="lastName.errors['required']">Last Name is required</div>
+            <div class="error" *ngIf="lastName.errors['minlength']">Last Name must be at least 2 characters</div>
+        </div>
+        
+        <div class="input-section">
+            <div class="email-text">Email</div>
+            <input type = 'email' [(ngModel)] = "form.email" name = 'email' class = 'field-input' ngModel required maxlength = "250" #email="ngModel" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"/>
+        </div>
+        <div class = 'error-section' *ngIf="email.errors && (email.dirty || email.touched)">
+            <div class='error' *ngIf="email.errors['required']">Email is required</div>
+            <div class="error" *ngIf="email.errors['maxlength']">Email length should not be more than 250 characters</div>
+            <div class="error" *ngIf="email.errors['pattern']">Please enter a valid email</div>
+        </div>
+        <div class="input-section">
+            <div class="phone-text">Phone Number</div>
+            <input type = 'phone' [(ngModel)] = "form.phone" name = 'phone' class = 'field-input' ngModel #phone="ngModel" required minlength="10" maxlength="12" pattern="^[0-9]+"/>
+        </div>
+        <div class = 'error-section' *ngIf="phone.errors && (phone.dirty || phone.touched)">
+            <div class='error' *ngIf="phone.errors['required']">Phone is required</div>
+            <div class="error" *ngIf="phone.errors['minlength']">Phone length should at least 10 characters</div>
+            <div class="error" *ngIf="phone.errors['maxlength']">Phone length should not be more than 12 characters</div>
+            <div class="error" *ngIf="phone.errors['pattern']">Please enter a valid phone number</div>
+        </div>
+        <div class="input-section">
+            <div class="input-text">Address</div>
+            <input type = 'text' [(ngModel)] = "form.address" name = 'address' class = 'field-input' ngModel #address="ngModel" required/>
+        </div>
+        <div class = 'error-section' *ngIf="address.errors && (address.dirty || address.touched)">
+            <div class='error' *ngIf="address.errors['required']">Address is required</div>
+        </div>
+        <div class="input-section">
+            <div class="input-text">Role</div>
+            <select name="role" ngModel class = 'select-input' [(ngModel)] = "form.role" required #role = "ngModel">
+                <option *ngFor="let role of roles" [ngValue]="role">
+                    {{ role }} 
+                </option>
+            </select> 
+        </div>
+        <div class = 'error-section' *ngIf="role.errors && loginForm.submitted">
+            <div class='error' *ngIf="role.errors['required']">Role is required</div>
+        </div>
+        <div class = 'btns'>
+        <button type = 'submit' class = 'submit-btn'>Register</button>
+        
+    </div>
+    </form>
+</div>

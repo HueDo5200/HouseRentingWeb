@@ -1,0 +1,33 @@
+<div class="app-login">
+    <h1>LOGIN</h1>
+    <form name = "form" #loginForm = "ngForm" (ngSubmit)="loginForm.form.valid && onClickSubmit()">
+    <div class = 'username-section'>
+        <div class = 'username-text'>Username</div>
+            <input  type = 'text' [(ngModel)] = "form.username" name = 'username' class = 'name-input' required minlength="2" maxlength="30" #username="ngModel"/>
+    </div>
+    <div class = 'error-section' *ngIf="username.errors && (username.dirty || username.touched)">
+        <div class = 'error' *ngIf="username.errors['required']">Username is required</div>
+        <div class="error" *ngIf="username.errors['minlength']">Username must be at least 2 characters</div>
+        <div class="error" *ngIf="username.errors['maxlength']">Username length should not be more than 30 characters</div>
+    </div>
+    <div class = 'password-section'>
+        <div class = 'pass-text'>Password</div> 
+            <input type = 'password' [(ngModel)] = "form.password" name = 'password' class = 'pass-input' required minlength="8" maxlength="50" #password = "ngModel"/>         
+    </div>
+   
+    <div class = 'error-section' *ngIf="password.errors && (password.dirty || password.touched)">
+        <div class = 'error' *ngIf="password.errors['required']">Password is required</div>
+        <div class="error" *ngIf="password.errors['minlength']">Password must be at least 8 character</div>
+        <div class="error" *ngIf="password.errors['maxlength']">Username length should not be more than 50 characters</div>
+    </div>
+    <div class = 'btns'>
+    <button type = 'submit' class = 'submit-btn'>Login</button>
+   
+     <a routerLink="/register" routerLinkActive="active" class = 'register-link'>Having no account ? Register now.</a>
+</div>
+<div class="error-section" *ngIf="loginFailed">
+    <div class="error">Logging failed! Username or password is not correct!</div>
+</div>
+</form>
+</div>
+

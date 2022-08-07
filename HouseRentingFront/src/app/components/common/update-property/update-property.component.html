@@ -1,0 +1,297 @@
+<div class="popup">
+  <div class="popup-inner">
+    <div class="popup-title" *ngIf="!property">
+      <h3>Add New Property</h3>
+    </div>
+    <div class="popup-title" *ngIf="property">
+      <h3>Edit Property</h3>
+    </div>
+    <button (click)="closePopup()" class="close-icon">
+      <mat-icon>clear</mat-icon>
+    </button>
+    <form
+      name="form"
+      #loginForm="ngForm"
+      (ngSubmit)="loginForm.form.valid && onSubmit()"
+    >
+      <div class="field-section">
+        <div class="input-text">Name</div>
+        <input
+          type="text"
+          [(ngModel)]="form.name"
+          name="username"
+          class="field-input"
+          required
+          minlength="2"
+          #name="ngModel"
+        />
+      </div>
+      <div
+        class="error-section"
+        *ngIf="name.errors && (name.dirty || name.touched)"
+      >
+        <div class="error" *ngIf="name.errors['required']">
+          Name is required
+        </div>
+        <div class="error" *ngIf="name.errors['minlength']">
+          Name must be at least 2 characters
+        </div>
+      </div>
+      <div class = 'row-section'>
+      <div class="field-section">
+        <div class="input-text">Description</div>
+        <textarea
+          type="text"
+          [(ngModel)]="form.description"
+          name="description"
+          class="field-input"
+          required
+          minlength="1"
+          #description="ngModel"
+          cols="30"
+          rows="6"
+        ></textarea>
+        <div
+          class="error-section"
+          *ngIf="
+            description.errors && (description.dirty || description.touched)
+          "
+        >
+          <div class="error" *ngIf="description.errors['required']">
+           Description is required
+          </div>
+          <div class="error" *ngIf="description.errors['minlength']">
+            Description must be at least 1 characters
+          </div>
+        </div>
+      </div>
+      <div class = 'amenity-checkbox'>
+        <div class = 'checkboxes' *ngFor="let amenity of amenities; let i = index">
+            <input type = 'checkbox' name ="amenity{{amenity.id}}" [(ngModel)] = "amenity.checked" #amenities ="ngModel"/>
+            <label >{{amenity.name}}</label>
+            <!-- <div *ngIf="loginForm.submitted && amenity.invalid" class="invalid-feedback">Amenitis are required</div> -->
+        </div>
+      </div>
+    </div>
+      <div class="number-section">
+        <div class="num-section">
+          <div class="input-text">Price Per Night</div>
+          <input
+            type="number"
+            [(ngModel)]="form.pricePerNight"
+            name="pricePerNight"
+            class="num-input"
+            required
+            min="1"
+            #pricePerNight="ngModel"
+          />
+        </div>
+        <div
+          class="error-section"
+          *ngIf="
+            pricePerNight.errors &&
+            (pricePerNight.dirty || pricePerNight.touched)
+          "
+        >
+          <div class="error" *ngIf="pricePerNight.errors['required']">
+            Price per night is required
+          </div>
+          <div class="error" *ngIf="pricePerNight.errors['min']">
+           Price per night must be at least 2 characters
+          </div>
+        </div>
+
+        <div class="num-section">
+            <div class="input-text">Bedroom</div>
+            <input
+              type="number"
+              [(ngModel)]="form.bedroom"
+              name="bedroom"
+              class="num-input"
+              required
+              min="1"
+              #bedroom="ngModel"
+            />
+          </div>
+          <div
+            class="error-section"
+            *ngIf="
+              bedroom.errors &&
+              (bedroom.dirty || bedroom.touched)
+            "
+          >
+            <div class="error" *ngIf="bedroom.errors['required']">
+              Number of bedroom is required
+            </div>
+            <div class="error" *ngIf="bedroom.errors['min']">
+              Number of bedroom must be at least 1
+            </div>
+          </div>
+
+          <div class="num-section">
+            <div class="input-text">Bathroom</div>
+            <input
+              type="number"
+              [(ngModel)]="form.bedroom"
+              name="bathroom"
+              class="num-input"
+              required
+              min="1"
+              #bathroom="ngModel"
+            />
+          </div>
+          <div
+            class="error-section"
+            *ngIf="
+            bathroom.errors &&
+              (bathroom.dirty || bathroom.touched)
+            "
+          >
+            <div class="error" *ngIf="bathroom.errors['required']">
+              Number of bathroom is required
+            </div>
+            <div class="error" *ngIf="bathroom.errors['min']">
+              Number of bathroom must be at least 1
+            </div>
+          </div>
+
+          <div class="num-section">
+            <div class="input-text">Kitchen</div>
+            <input
+              type="number"
+              [(ngModel)]="form.bedroom"
+              name="kitchen"
+              class="num-input"
+              required
+              min="1"
+              #kitchen="ngModel"
+            />
+          </div>
+          <div
+            class="error-section"
+            *ngIf="
+            kitchen.errors &&
+              (kitchen.dirty || kitchen.touched)
+            "
+          >
+            <div class="error" *ngIf="kitchen.errors['required']">
+              Number of kitchen is required
+            </div>
+            <div class="error" *ngIf="kitchen.errors['min']">
+              Number of kitchen must be at least 1
+            </div>
+          </div>
+      </div>
+      <!-- <div class="field-section">
+        <div class="input-text">Email</div>
+        <input
+          type="email"
+          [(ngModel)]="form.email"
+          name="email"
+          class="field-input"
+          maxlength="250"
+          required
+          pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+          #email="ngModel"
+        />
+      </div>
+      <div
+        class="error-section"
+        *ngIf="email.errors && (email.dirty || email.touched)"
+      >
+        <div class="error" *ngIf="email.errors['required']">
+          Email is required
+        </div>
+        <div class="error" *ngIf="email.errors['maxlength']">
+          Email length should not be more than 250 characters
+        </div>
+        <div class="error" *ngIf="email.errors['pattern']">
+          Please enter a valid email
+        </div>
+      </div> -->
+      <div class = 'location-section'>
+      <div class="field-section">
+        <div class="input-text">State</div>
+        <input
+          type="text"
+          [(ngModel)]="form.location.state"
+          name="state"
+          class="location-input"
+          required
+          #state="ngModel"
+        />
+      </div>
+      <div
+        class="error-section"
+        *ngIf="state.errors && (state.dirty || state.touched)"
+      >
+        <div class="error" *ngIf="state.errors['required']">
+          State is required
+        </div>
+      </div>
+
+      <div class="field-section">
+        <div class="input-text">City</div>
+        <input
+          type="text"
+          [(ngModel)]="form.location.city"
+          name="city"
+          class="location-input"
+          required
+          #city="ngModel"
+        />
+      </div>
+      <div
+        class="error-section"
+        *ngIf="city.errors && (city.dirty || city.touched)"
+      >
+        <div class="error" *ngIf="city.errors['required']">
+          City is required
+        </div>
+      </div>
+
+      <div class="field-section">
+        <div class="input-text">Detail Location</div>
+        <input
+          type="text"
+          [(ngModel)]="form.location.details"
+          name="details"
+          class="field-input"
+          required
+          #detail="ngModel"
+        />
+      </div>
+      <div
+        class="error-section"
+        *ngIf="detail.errors && (detail.dirty || detail.touched)"
+      >
+        <div class="error" *ngIf="detail.errors['required']">
+          Detailed Location is required
+        </div>
+      </div>
+    </div>
+      <div class="field-section">
+        <div class="input-text">Select property type</div>
+        <select
+          [(ngModel)]="form.propertyType"
+          name="type"
+          class="field-input"
+          required
+          #type="ngModel"
+        >
+          <option *ngFor="let type of types"  [ngValue] ="type">{{type.name}}</option>
+        </select>
+      </div>
+      
+      <div
+        class="error-section"
+        *ngIf="type.errors && (type.dirty || type.touched)"
+      >
+        <div class="error" *ngIf="type.errors['required']">
+          Role is required
+        </div>
+      </div>
+      <button class="submit-btn" type="submit">Save</button>
+    </form>
+  </div>
+</div>

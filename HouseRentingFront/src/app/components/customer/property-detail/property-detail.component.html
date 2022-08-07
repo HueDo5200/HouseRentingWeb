@@ -1,0 +1,118 @@
+<div class="app-property-detail">
+  <div class="property-section" *ngIf="property">
+    <div class="property-name">{{ property.name }}</div>
+    <div class="property-infor">
+      <div class="rating">{{ property.avgRating }} <i class="fa-solid fa-star"></i></div>
+      <div class="review-num">{{ property.ratingNum }} reviews</div>
+      <div class="location">
+        {{ property.location.state }}, {{ property.location.city }},
+        {{ property.location.details }}
+      </div>
+    </div>
+    <div class="property-images" *ngIf="property.propertyImages">
+      <div class="images" *ngFor="let image of property.propertyImages; let i = index">
+        <div class="image-item">
+          <img
+            class="property-img"
+            src="http://localhost:8084/api/v1/renting/public/properties/{{ image.name }}"
+            alt=""
+          />
+        </div>
+      </div>
+    </div>
+    <div class="below-img">
+      <div class="below-img-left">
+        <div class="host-infor">
+          Hosted by: {{ property.ownerName }}
+        </div>
+        
+        <div class="feature">
+          <div class="room">
+            {{ property.bedroom }} bedroom {{ property.bathroom }} bathroom
+            {{ property.kitchen }} kitchen
+          </div>
+          <div class="amenities">
+             <div class = 'what-text'>What this property offers:</div> 
+             <div class = 'amenity-list'>
+            <div
+              class="amenity-item"
+              *ngFor="let amenity of property.amenities"
+            >
+            <div class = 'amenity-name'>{{ amenity.name }}</div> 
+          </div> 
+            </div>
+          </div>
+        </div>
+        <br/>
+        <div class="description">
+          {{ property.description }}
+        </div>
+      </div>
+
+      <div class="below-img-right">
+          <div class = 'status-section' *ngIf="property.reservationStatus == 1">
+            <div class = 'status-text'>
+                Reserved successfully!
+              </div>
+          </div>
+          <div class = 'status-section' *ngIf="property.reservationStatus == 0">
+            <div class = 'status-text'>
+                Waiting for owner's response
+              </div>
+          </div>
+          <div class = 'status-section' *ngIf="property.reservationStatus == 2">
+            <div class = 'status-text'>
+                Paid
+              </div>
+          </div>
+          <div class = 'reservation-info' *ngIf="property.reservationStatus != -1">
+            <div>From: {{property.startDate | date}}</div>
+            <div>To: {{property.endDate | date}}</div>
+            <div>Total: {{property.total}} $</div>
+          </div>
+          <div class = 'status-section' *ngIf="property.reservationStatus == -1">
+                <div class = 'reservation-section'>
+                    <div class = 'card-header'>
+                        <div class = 'price'>{{property.pricePerNight}} $</div>
+                        <div class = 'avgRating'>{{property.avgRating}} <i class="fa-solid fa-star"></i></div>
+                        <div class = 'reviewNum'>{{property.ratingNum}} reviews</div>
+                    </div>
+                    <div class = 'cart-body' *ngIf="isCustomer && property.currentReservations && property.currentReservations.length > 0">
+                      Property has been reserved on this period: 
+                    <div class = 'card-reservation-info' >
+                      <div class = 'card-item' *ngFor="let r of property.currentReservations">
+                        <div class = 'date-detail'>
+                        <div class = 'date-item'>{{r.startDate | date}}</div>
+                        to
+                        <div class = 'date-item'>{{r.endDate | date}}</div>
+                      </div>
+                      </div>
+                    </div>
+                    Please select another date!
+                    </div>
+                    <div class = 'card-body'>
+                      <form class = "form" #reserveForm ="ngForm"  (ngSubmit)="reserveForm.form.valid && onSubmit()">
+                        <input type = 'date' [(ngModel)] = "form.checkinDate" name = "checkinDate" #checkinDate = "ngModel" min = "{{current | date:'yyyy-MM-dd'}}" class = 'checkin-date' placeholder="Check in"/>
+                        <div class = 'error-section' *ngIf="checkinDate.errors && (checkinDate.dirty || checkinDate.touched)">
+                          <div class = 'error' *ngIf="checkinDate.errors['min']">Please select date from today</div>
+                      </div>
+                        <input type = 'date'[(ngModel)] = "form.checkoutDate"  name = "checkoutDate" class = 'checkout-date' min="{{current | date:'yyyy-MM-dd'}}" #checkoutDate = "ngModel" placeholder = "Check out"/>
+                        <div class = 'error-section' *ngIf="checkoutDate.errors && (checkoutDate.dirty || checkoutDate.touched)">
+                          <div class = 'error' *ngIf="checkoutDate.errors['min']">Please select date from checkin date</div>
+                      </div>
+                   
+                    <div class = 'card-footer'>
+                        <button class = 'reserve-btn' type = 'submit'>Reserve property</button>
+                    </div>
+                    <div class = 'login-request' *ngIf="requireLogin">
+                      <a href = "/login">You need to log in as customer to reserve!</a>
+                    </div>
+                    
+                  </form>
+                </div>
+                </div>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
